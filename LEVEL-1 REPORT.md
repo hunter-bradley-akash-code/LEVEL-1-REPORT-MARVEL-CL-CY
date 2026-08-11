@@ -51,6 +51,9 @@ I forked the **TheAlgorithms/Python** repository to my GitHub account and cloned
 I added a new **Harmonic Mean** algorithm in the existing `maths` directory.
 
 ## IMAGES
+![git](task1_6.jpg)
+![git](task1_8.jpg)
+![git](task1_9.jpg)
 ---
 
 # TASK 2: Exploring Docker Fundamentals
@@ -105,7 +108,8 @@ This task gave me a practical understanding of how Docker images and containers 
 | `docker rmi <image>` | Removes a Docker image |
 
 ## Images
-
+![docker](docker_6.jpg)
+![docker](docker_8.jpg)
 - - -
 
 # TASK 3: Dockerize a Simple Application
@@ -135,7 +139,8 @@ This task helped me understand how a Dockerfile is used to create an image and h
 
 
 ## Images
-
+![docker](newtask3_2.jpg)
+![docker](newtask3_6.jpg)
 - - -
 
 # TASK 4: Launch and Manage an AWS EC2 Instance
@@ -150,7 +155,8 @@ I also checked the CPU and memory resources available to the virtual machine usi
 Overall, this task gave me practical experience with launching an EC2 instance, securely accessing it, configuring network access, hosting a web server, and understanding the basic CPU and memory resources of a cloud VM.
 
 ## Images
-
+![AWS](task4_4.jpg)
+![AWS](task4_3.jpg)
 - - -
 # TASK 5: Kubernetes Basics and Writing Pod Specs
 
@@ -180,7 +186,8 @@ I created a `pod.yaml` file to define the configuration of the Nginx Pod. The ma
 | `containerPort: 80` | Specifies the port on which the Nginx container listens. |
 
 ## Images
-
+![minikube](task5_1.jpg)
+![minikube](task5_6.jpg)
 - - -
 # TASK 6: Manage AWS S3 and IAM with CLI
 
@@ -215,6 +222,10 @@ I then performed the following S3 operations using the CLI:
 Through this task, I understood how **custom IAM policies can be created and attached to users** and how permissions control access to AWS resources. I also practiced managing an S3 bucket and its objects directly through the **AWS CLI**.
 
 ## Images
+![AWS](task6_2.jpg)
+![AWS](task6_3.jpg)
+![AWS](task6_4.jpg)
+
 - - - 
 # TASK 7: Deploy a Containerized Application on Kubernetes
 ---
@@ -238,6 +249,11 @@ The Kubernetes setup was managed using the following YAML files:
 Through this task I worked with Kubernetes **Deployments, Pods, Services, scaling, NodePort access, and rolling updates**. I also understood how Kubernetes maintains the required number of application replicas and updates them without manually recreating the containers.
 
 ## Images
+![minikube](task7_2.jpg)
+![minikube](task7_4.jpg)
+![minikube](task7_8.jpg)
+
+
 - - -
 # TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
 ---
@@ -253,3 +269,6 @@ As part of the MARVEL Level 1 activities, I completed all **26 tasks** in the UV
 - **Red Teaming:** Attack surfaces, security testing, vulnerability identification, authorized testing, and reporting.
 
 I successfully completed all **26 tasks**. The TryHackMe exercises helped me connect theoretical concepts with practical scenarios.
+## Images
+![cy](CY_COMP_1.jpg)
+---
