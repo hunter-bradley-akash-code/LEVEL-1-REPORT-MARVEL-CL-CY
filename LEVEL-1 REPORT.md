@@ -86,8 +86,6 @@ I practiced commands to view running containers, check container logs, inspect c
 
 This task gave me a practical understanding of how Docker images and containers work and how containers can be managed using the command line.
 
-## Important Docker Commands
-
 | Command | Purpose |
 |---|---|
 | `docker --version` | Checks the installed Docker version |
@@ -153,4 +151,91 @@ Overall, this task gave me practical experience with launching an EC2 instance, 
 
 ## Images
 
+- - -
+# TASK 5: Kubernetes Basics and Writing Pod Specs
+
+---
+
+In this task, I learned the basics of **Kubernetes** and how it is used to manage containerized applications. I understood the role of a **Kubernetes cluster, nodes, Pods, and the control plane**, and learned how Kubernetes uses YAML manifest files to define and deploy workloads.
+
+I created a local Kubernetes cluster using **Minikube** with Docker as the driver and used `kubectl` to interact with the cluster. I then created a Pod specification for an **Nginx** container using a YAML manifest.
+
+The Pod manifest defined the Pod name, labels, container name, Nginx image, and container port.
+
+### Pod YAML File
+
+I created a `pod.yaml` file to define the configuration of the Nginx Pod. The main fields used in the file are:
+
+| YAML Field | Purpose |
+|---|---|
+| `apiVersion: v1` | Specifies the Kubernetes API version used for the Pod. |
+| `kind: Pod` | Defines the Kubernetes resource as a Pod. |
+| `metadata` | Contains the Pod's name and labels. |
+| `name: nginx-pod` | Gives the Pod a unique name. |
+| `labels` | Adds identifying information to the Pod. |
+| `spec` | Defines the desired configuration of the Pod. |
+| `containers` | Specifies the containers that run inside the Pod. |
+| `name: nginx` | Gives the container its name. |
+| `image: nginx:latest` | Specifies the Nginx container image to use. |
+| `containerPort: 80` | Specifies the port on which the Nginx container listens. |
+
+## Images
+
+- - -
+# TASK 6: Manage AWS S3 and IAM with CLI
+
+---
+
+In this task, I worked with **AWS S3 and IAM using the AWS CLI**. The main objective was to create an IAM user, configure the required permissions, and use the AWS CLI to manage an S3 bucket.
+
+I first created an IAM user named **AKASH_CLI** with console and programmatic access. Instead of using an existing policy, I created custom IAM policies for the task. The **S3BucketCreationPolicy** was created to provide the required permissions for S3 bucket operations, while the **S3BucketObjectAccessPolicy** was created to allow listing, uploading, downloading and deleting objects from the specific S3 bucket. Both policies were then attached directly to the `AKASH_CLI` user.
+
+After configuring IAM, I created an S3 bucket named **`akash-s3-cli-94800`** in the **ap-south-1 (Mumbai)** region using the AWS CLI. I created a local `upload` and `download` folder and added a sample `test.txt` file to the upload folder.
+
+I then performed the following S3 operations using the CLI:
+
+- Uploaded `test.txt` to the S3 bucket.
+- Listed the bucket contents to confirm the uploaded file.
+- Downloaded the file back to the local `download` folder.
+- Checked the downloaded file and its contents.
+- Deleted the file from the S3 bucket.
+- Listed the bucket again to confirm it was empty.
+- Used `aws sts get-caller-identity` to confirm that the CLI was using the `AKASH_CLI` IAM user.
+
+### S3 Details
+
+| Item | Details |
+|---|---|
+| Bucket | `akash-s3-cli-94800` |
+| Region | `ap-south-1 (Mumbai)` |
+| IAM User | `AKASH_CLI` |
+| Test File | `test.txt` |
+| Operations | Upload, List, Download, Delete |
+
+Through this task, I understood how **custom IAM policies can be created and attached to users** and how permissions control access to AWS resources. I also practiced managing an S3 bucket and its objects directly through the **AWS CLI**.
+
+## Images
+- - - 
+# TASK 7: Deploy a Containerized Application on Kubernetes
+---
+
+In this task I deployed a **Dockerized Flask application on Kubernetes** using **Minikube**. I created Kubernetes YAML manifests for a Deployment and Services and used them to manage and expose the application.
+
+I first created the Flask application and packaged it into a Docker image named `kubernetes-task-7-app:1.0`. After testing the application locally I loaded the image into Minikube and created a Kubernetes Deployment with **3 replicas**.
+
+I then created a **ClusterIP Service** to expose the application within the Kubernetes cluster. I also created a **NodePort Service** using port `30080` to access the application externally. The application was successfully opened in the browser through the Minikube service URL.
+
+To practice Kubernetes scaling I scaled the Deployment from **3 replicas to 5 replicas** and verified that all five Pods were running. I then scaled it back down to **2 replicas**.
+
+Finally I created a new Docker image version `kubernetes-task-7-app:1.1` loaded it into Minikube and updated the Deployment using `kubectl set image`. I verified that the rolling update completed successfully and that the new Pods were running the updated image.
+
+The Kubernetes setup was managed using the following YAML files:
+
+- `deployment.yaml` – Defines the application Deployment and replicas.
+- `service-clusterip.yaml` – Exposes the application internally using ClusterIP.
+- `service-nodeport.yaml` – Exposes the application externally using NodePort.
+
+Through this task I worked with Kubernetes **Deployments, Pods, Services, scaling, NodePort access, and rolling updates**. I also understood how Kubernetes maintains the required number of application replicas and updates them without manually recreating the containers.
+
+## Images
 - - -
