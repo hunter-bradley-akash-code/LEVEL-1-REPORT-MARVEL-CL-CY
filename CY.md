@@ -691,5 +691,3 @@ The cryptography tasks helped me understand how information can be protected, wh
 Finally, the red teaming section gave me an introduction to offensive security and showed me how security professionals think from an attacker's perspective while working within an authorized environment.
 
 Overall, this room helped me build a strong foundation in networking, operating systems, cryptography, and cybersecurity principles, and it also gave me more confidence in exploring practical cybersecurity challenges.
-
-**I successfully completed all 26 tasks in the UVCE MARVEL Level 1 room (Room completed: 100%).**
