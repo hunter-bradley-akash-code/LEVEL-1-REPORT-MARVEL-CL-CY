@@ -239,3 +239,17 @@ Through this task I worked with Kubernetes **Deployments, Pods, Services, scalin
 
 ## Images
 - - -
+# TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
+---
+
+As part of the MARVEL Level 1 activities, I completed all **26 tasks** in the UVCE MARVEL Level 1 TryHackMe room. The room provided a practical introduction to computer networking, operating systems, cryptography, and cybersecurity. :contentReference[oaicite:0]{index=0}
+
+
+- **Networking:** IP addresses, ports, packets, frames, networking devices, DNS, DHCP, ICMP, HTTP/HTTPS, and network models.
+- **Windows:** Windows basics, PowerShell, CMD, System32, user accounts, UAC, and Windows security.
+- **Linux:** Linux basics, terminal usage, file systems, and important directories.
+- **Cryptography:** Encryption, decryption, plaintext, ciphertext, symmetric and asymmetric cryptography, and cipher analysis.
+- **Cybersecurity:** CIA Triad — Confidentiality, Integrity, and Availability.
+- **Red Teaming:** Attack surfaces, security testing, vulnerability identification, authorized testing, and reporting.
+
+I successfully completed all **26 tasks**. The TryHackMe exercises helped me connect theoretical concepts with practical scenarios.
