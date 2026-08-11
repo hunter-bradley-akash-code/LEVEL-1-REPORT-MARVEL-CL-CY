@@ -52,7 +52,9 @@ I added a new **Harmonic Mean** algorithm in the existing `maths` directory.
 
 ## IMAGES
 ![git](task1_6.jpg)
+
 ![git](task1_8.jpg)
+
 ![git](task1_9.jpg)
 ---
 
@@ -109,6 +111,7 @@ This task gave me a practical understanding of how Docker images and containers 
 
 ## Images
 ![docker](docker_6.jpg)
+
 ![docker](docker_8.jpg)
 - - -
 
@@ -140,6 +143,7 @@ This task helped me understand how a Dockerfile is used to create an image and h
 
 ## Images
 ![docker](newtask3_2.jpg)
+
 ![docker](newtask3_6.jpg)
 - - -
 
@@ -156,6 +160,7 @@ Overall, this task gave me practical experience with launching an EC2 instance, 
 
 ## Images
 ![AWS](task4_4.jpg)
+
 ![AWS](task4_3.jpg)
 - - -
 # TASK 5: Kubernetes Basics and Writing Pod Specs
@@ -187,6 +192,7 @@ I created a `pod.yaml` file to define the configuration of the Nginx Pod. The ma
 
 ## Images
 ![minikube](task5_1.jpg)
+
 ![minikube](task5_6.jpg)
 - - -
 # TASK 6: Manage AWS S3 and IAM with CLI
@@ -223,7 +229,9 @@ Through this task, I understood how **custom IAM policies can be created and att
 
 ## Images
 ![AWS](task6_2.jpg)
+
 ![AWS](task6_3.jpg)
+
 ![AWS](task6_4.jpg)
 
 - - - 
@@ -250,9 +258,10 @@ Through this task I worked with Kubernetes **Deployments, Pods, Services, scalin
 
 ## Images
 ![minikube](task7_2.jpg)
-![minikube](task7_4.jpg)
-![minikube](task7_8.jpg)
 
+![minikube](task7_4.jpg)
+
+![minikube](task7_8.jpg)
 
 - - -
 # TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
@@ -271,4 +280,10 @@ As part of the MARVEL Level 1 activities, I completed all **26 tasks** in the UV
 I successfully completed all **26 tasks**. The TryHackMe exercises helped me connect theoretical concepts with practical scenarios.
 ## Images
 ![cy](CY_COMP_1.jpg)
+
+[View Report PDF](cy_DNS.pdf)
+
+[Task 1 Report](./TASK1.md)
+
+[complete_Report](CY.md)
 ---
