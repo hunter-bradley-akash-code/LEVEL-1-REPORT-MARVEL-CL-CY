@@ -288,14 +288,15 @@ Through this task, I learned the difference between **ConfigMaps and Secrets**. 
 
 ## Images
 
+## Images
+
 ![kubernetes](task8_1.jpg)
 
 ![kubernetes](task8_2.jpg)
 
-![kubernetes](task8_3.jpg)
-
 ![kubernetes](task8_4.jpg)
-- - -
+
+![kubernetes](task8_7_8.jpg)
 - - -
 # TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
 ---
