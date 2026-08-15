@@ -50,7 +50,7 @@ I forked the **TheAlgorithms/Python** repository to my GitHub account and cloned
 
 I added a new **Harmonic Mean** algorithm in the existing `maths` directory.
 
-## IMAGES
+## Images
 ![git](task1_6.jpg)
 
 ![git](task1_8.jpg)
