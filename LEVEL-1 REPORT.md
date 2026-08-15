@@ -262,7 +262,40 @@ Through this task I worked with Kubernetes **Deployments, Pods, Services, scalin
 ![minikube](task7_4.jpg)
 
 ![minikube](task7_8.jpg)
+- - -
+# **Task 8: Use Kubernetes Secrets and Environment Variables**
+- - -
 
+In this task, I learned how to use **Kubernetes ConfigMaps and Secrets** to manage application configuration and sensitive information separately from the application code.
+
+I created a Flask application using **Python, Flask and Boto3** and packaged it into a Docker image named `kubernetes-task-8-app:1.0`. I then loaded the image into **Minikube** and deployed the application using a Kubernetes Deployment with **2 replicas**.
+
+I created a **ConfigMap** to store non-sensitive configuration such as the application message and AWS region. These values were injected into the Pods as environment variables and verified from inside the running containers.
+
+I also created a **Kubernetes Secret** named `kubernetes-task-8-aws-secret` to store the AWS credentials. The credentials were injected into the Deployment as environment variables instead of being hardcoded in the application.
+
+The application was connected to the AWS S3 bucket `akash-s3-cli-94800` using **Boto3**. I created a NodePort Service to access the application through the browser and tested the following endpoints:
+
+| Endpoint | Result |
+|---|---|
+| `/` | ConfigMap values displayed successfully |
+| `/health` | Application returned `healthy` |
+| `/s3` | S3 bucket access verified with HTTP 200 |
+
+I also verified that the Deployment had **2/2 available replicas**, both Pods were running, and the application logs showed successful requests.
+
+Through this task, I learned the difference between **ConfigMaps and Secrets**. ConfigMaps are used for non-sensitive configuration, while Secrets are used to store sensitive information such as AWS credentials. I also learned how Kubernetes can provide these values to applications through environment variables.
+
+## Images
+
+![kubernetes](task8_1.jpg)
+
+![kubernetes](task8_2.jpg)
+
+![kubernetes](task8_3.jpg)
+
+![kubernetes](task8_4.jpg)
+- - -
 - - -
 # TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
 ---
