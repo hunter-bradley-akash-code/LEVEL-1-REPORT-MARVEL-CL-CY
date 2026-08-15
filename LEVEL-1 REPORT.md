@@ -288,8 +288,6 @@ Through this task, I learned the difference between **ConfigMaps and Secrets**. 
 
 ## Images
 
-## Images
-
 ![kubernetes](task8_1.jpg)
 
 ![kubernetes](task8_2.jpg)
@@ -297,6 +295,45 @@ Through this task, I learned the difference between **ConfigMaps and Secrets**. 
 ![kubernetes](task8_4.jpg)
 
 ![kubernetes](task8_7_8.jpg)
+
+- - -
+# **Task 9: Deploy an App to Push Files from Kubernetes to S3**
+- - -
+
+In this task I deployed a **Flask-based file upload application on Kubernetes** and connected it to an **AWS S3 bucket** using **Boto3**.
+
+I first created a Flask application with a simple web interface for selecting and uploading files. The application was configured to upload the selected files to the S3 bucket `akash-s3-cli-94800` in the **ap-south-1 (Mumbai)** region.
+
+I created a `requirements.txt` file containing Flask and Boto3 and created a **Dockerfile** to package the application into a Docker image named `marvel-task-9:latest`.
+
+After testing the application with Docker, I loaded the image into **Minikube** and created a Kubernetes Deployment. I also created a **Kubernetes Secret** named `aws-credentials` to store the AWS credentials securely. The credentials were provided to the application through environment variables instead of being hardcoded in the application.
+
+I created a **NodePort Service** to expose the Flask application and accessed it through the browser. The application successfully uploaded files such as `sample2.cpp`, `requirements.txt`, and `app.py` to the AWS S3 bucket.
+
+### Kubernetes Configuration
+
+| Component | Purpose |
+|---|---|
+| `deployment.yaml` | Deploys the Flask application on Kubernetes |
+| `service.yaml` | Exposes the application using NodePort |
+| `aws-credentials` | Stores AWS credentials as a Kubernetes Secret |
+| `marvel-task-9:latest` | Docker image containing the Flask application |
+| `ap-south-1` | AWS Mumbai region |
+| `akash-s3-cli-94800` | S3 bucket used for file storage |
+
+The final setup worked as:
+
+**Browser → NodePort Service → Kubernetes Pod → Flask + Boto3 → AWS S3**
+
+This task helped me understand how a **Dockerized Flask application can be deployed on Kubernetes and securely connected to AWS S3 using Kubernetes Secrets and environment variables**.
+
+## Images
+
+![Kubernetes](task9_4.jpg)
+
+![Kubernetes](task9_5.jpg)
+
+![AWS S3](task9_8.jpg)
 - - -
 # TASK: TryHackMe UVCE MARVEL Level 1 (CL-CY) – Cybersecurity
 ---
