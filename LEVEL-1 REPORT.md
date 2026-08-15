@@ -352,6 +352,8 @@ I successfully completed all **26 tasks**. The TryHackMe exercises helped me con
 ## Images and attachments
 ![cy](CY_COMP_1.jpg)
 
+![assignment](cy_assingment)
+
 [View PDF](cy_DNS.pdf)
 
 [click here for detailed report](CY.md)
