@@ -1,265 +1,219 @@
-# TASK: TryHackMe UVCE MARVEL Level 1(CL-CY) – Cybersecurity
+### **Task 1: Fundamentals of Computer Networking: Introduction**
+
+This task introduced the basic concept of a **network** and how different things can be connected together. A network is not limited to computers. Examples include bus and train systems, electricity grids, postal systems, and even social groups.
+
+In computing, networks connect devices such as phones, laptops, security cameras, traffic lights, and modern machines. A network can be as small as two devices sharing files or as large as billions of devices connected through the Internet.
+
+I learned that networks are involved in almost everything we use today. Since many important systems depend on networks, understanding how they work is an important foundation for cybersecurity.
+
+**Main takeaway:** A network is simply a collection of connected devices or systems that communicate and share information.
 
 ---
 
-## Introduction
+### **Task 2: Fundamentals of Computer Networking: Internet**
 
-As part of the MARVEL Level 1 activities, I completed the **UVCE MARVEL Level 1** room on TryHackMe. The room provided a practical introduction to important concepts in computer networking, operating systems, cryptography, and cybersecurity.
+This task explained how the **Internet** developed and how it works as a global network.
 
-The tasks were divided into different sections covering networking fundamentals, network protocols, Windows, Linux, cryptography, the CIA triad, and basic red teaming concepts.
+The Internet began with **ARPANET**, a project funded by the U.S. Defence Department in the late 1960s. Later, in 1989, **Tim Berners-Lee** created the **World Wide Web (WWW)**, which made sharing and accessing information through the Internet much easier.
 
-I completed all **26 tasks** in the room and gained a better understanding of how computers communicate over networks, how operating systems work, how data can be protected using cryptography, and how cybersecurity principles are applied in real-world situations.
+I also learned that the Internet can be described as a **network of networks**. Many smaller private networks are connected together to form the large public network that we use today.
 
----
+The task also introduced the difference between **private networks** and the **public network (Internet)**.
 
-## Objectives
-
-The main objectives of completing this room were:
-
-- To understand the fundamentals of computer networking.
-- To learn how devices communicate using IP and MAC addresses.
-- To understand ports, packets, frames, and networking devices.
-- To learn the purpose of important network protocols.
-- To understand basic Windows administration and security.
-- To learn the basics of Linux and its file system.
-- To understand fundamental cryptography concepts.
-- To learn about the CIA triad in cybersecurity.
-- To get an introduction to red teaming and offensive security concepts.
-- To gain practical exposure to cybersecurity through TryHackMe.
+**Main takeaway:** The Internet is a huge collection of interconnected networks that allows devices around the world to communicate.
 
 ---
 
-# Section A – Fundamentals of Computer Networking
+### **Task 3: Fundamentals of Computer Networking: IP Address**
 
-## Task 1: Introduction
+This task explained how devices identify each other on a network using **IP addresses** and **MAC addresses**.
 
-In the first task, I learned the basic concepts of computer networking.
+An **IP address** works like a name for a device on a network. It can change depending on the network or configuration. An example of an IPv4 address is `192.168.1.10`.
 
-A computer network is a group of connected devices that communicate with each other and share information or resources. Networks can range from a small local network connecting computers in a home or office to large networks such as the Internet.
+I learned about **private IP addresses**, which are used inside local networks, and **public IP addresses**, which are used for communication over the Internet. The task also introduced **IPv6**, which was developed because the number of available IPv4 addresses was limited.
 
-I understood that networking is an important foundation of cybersecurity because almost every modern system communicates over a network.
+A **MAC address** is associated with the network hardware and can be thought of as a device's fingerprint. However, it can be copied using **MAC spoofing**, so it should not be treated as a completely reliable security mechanism.
 
-**Key concepts learned**
-- Computer networks
-- Devices communicating with each other
-- Local and large-scale networks
-- Network resources
-- Importance of networking in cybersecurity
+The questions helped me understand the difference between IP addresses, MAC addresses, private and public IPs, and MAC spoofing.
+
+**Main takeaway:** IP addresses identify devices on a network, while MAC addresses identify network interfaces at the hardware level.
 
 ---
 
-## Task 2: Internet
+### **Task 4: Fundamentals of Computer Networking: Ports**
 
-This task introduced me to the Internet and how different networks are connected together.
+This task introduced **network ports** and their role in communication.
 
-I learned that the Internet is a huge collection of interconnected networks. Devices communicate with remote systems using standardized networking protocols.
+Ports are numbered communication channels ranging from **0 to 65535**. They help the operating system determine which application or service should handle incoming network traffic.
 
-I also understood that when I access a website, my device communicates with servers through several networking components and protocols before receiving the requested information.
+Some common ports are:
 
-**Key concepts learned**
-- Internet and interconnected networks
-- Clients and servers
-- Data communication
-- Routing
-- Internet infrastructure
+* **21** – FTP
+* **22** – SSH
+* **80** – HTTP
+* **443** – HTTPS
+
+The task also explained that the well-known ports from **0 to 1024** are commonly associated with standard services.
+
+From a cybersecurity perspective, I understood that open ports can act as potential entry points into a system. Services running on unnecessary or poorly secured ports can increase the attack surface.
+
+**Main takeaway:** Ports help direct traffic to the correct application, but unnecessary open ports can create security risks.
 
 ---
 
-## Task 3: IP Address
+### **Task 5: Fundamentals of Computer Networking: Packets and Frames**
 
-This task focused on IP addresses and how devices are identified on a network.
+This task explained how data is transferred across a network by breaking it into smaller units.
 
-An IP address acts like an address for a device on a network. I learned about **IPv4** and **IPv6**, as well as the difference between private and public IP addresses.
+At the **Network Layer**, data is handled as **packets**, while at the **Data Link Layer**, packets are encapsulated into **frames**.
 
-For example:
+Packets contain information such as:
+
+* Source IP address
+* Destination IP address
+* Data payload
+* Checksum
+* Time To Live (TTL)
+
+The **TTL** value prevents packets from circulating endlessly around a network. Each router decreases the TTL, and when it reaches zero, the packet is discarded.
+
+Breaking data into smaller packets also improves network efficiency. If part of a transmission is lost, only the required data needs to be retransmitted instead of the entire file.
+
+**Main takeaway:** Packets and frames allow large amounts of data to be transmitted efficiently across different network layers.
+
+---
+
+### **Task 6: Fundamentals of Computer Networking: Networking Devices**
+
+This task introduced the main devices used to connect and secure networks.
+
+A **Hub** operates at Layer 1 and broadcasts incoming data to all connected devices. A **Switch** mainly operates at Layer 2 and uses MAC addresses to forward data to the correct device.
+
+A **Router** operates at Layer 3 and connects different networks using IP addresses. It can also perform functions such as NAT and DHCP.
+
+I also learned about:
+
+* **Access Points** – connect wireless devices to a network.
+* **Multilayer Switches** – combine Layer 2 switching and Layer 3 routing.
+* **Firewalls** – filter network traffic according to security rules.
+* **IDS/IPS** – detect suspicious activity and, in the case of IPS, block threats.
+* **VPNs** – create encrypted tunnels for secure communication.
+
+The task helped me understand that different networking devices have different roles depending on the layer and purpose.
+
+**Main takeaway:** Networking devices are responsible for connecting systems, directing traffic, and protecting networks from unwanted access.
+
+---
+
+### **Task 7: Protocols: DNS**
+
+This task introduced the **Domain Name System (DNS)**, which can be thought of as the phonebook of the Internet.
+
+DNS converts human-readable domain names into IP addresses. For example:
 
 ```text
-Private IP: 192.168.1.10
-Public IP:  8.8.8.8
+google.com → IP address
 ```
 
-Private IP addresses are commonly used inside local networks, while public IP addresses are used to communicate over the Internet.
+This is important because remembering IP addresses for every website would be impractical. DNS allows users to simply enter a domain name while the system handles the IP address lookup in the background.
 
-I also learned that IP addresses can change depending on the network and configuration.
+I also completed the DNS questions and used **nslookup** to perform DNS lookup experiments with different DNS servers.
 
-**Key concepts learned**
-- IPv4
-- IPv6
-- Private IP addresses
-- Public IP addresses
-- Network identification
-- IP address allocation
+**Main takeaway:** DNS makes the Internet easier to use by translating domain names into the IP addresses required for communication.
 
 ---
 
-## Task 4: Ports
+### **Task 8: Protocols: DHCP**
 
-In this task, I learned about ports and their importance in network communication.
+This task explained **Dynamic Host Configuration Protocol (DHCP)** and how devices automatically receive network configuration.
 
-A port helps identify a particular service or application running on a device. Different services commonly use different port numbers.
+DHCP follows a four-step process called **DORA**:
 
-For example:
+1. **Discover** – The client broadcasts to find a DHCP server.
+2. **Offer** – The server offers an available IP address.
+3. **Request** – The client requests the offered IP address.
+4. **Acknowledge** – The server confirms the IP allocation.
+
+Initially, the client does not have an IP address and uses:
 
 ```text
-HTTP  → 80
-HTTPS → 443
-SSH   → 22
-DNS   → 53
+0.0.0.0
 ```
 
-I understood that checking open ports can help identify which services are running on a system. This is also important during security assessments because unnecessary or vulnerable services can increase the attack surface.
-
-**Key concepts learned**
-- Ports
-- Services
-- Common port numbers
-- Open and closed ports
-- Network attack surface
-
----
-
-## Task 5: Packets & Frames
-
-This task explained how data is transferred across a network.
-
-Instead of sending a large amount of data as one piece, information is divided into smaller units. These units are processed and transmitted across the network.
-
-I learned the difference between packets and frames and how they are used at different layers of network communication.
-
-**Key concepts learned**
-- Data transmission
-- Packets
-- Frames
-- Network communication
-- Encapsulation
-
-Understanding packets and frames is also useful in cybersecurity because network traffic can be analysed to identify suspicious or unusual activity.
-
----
-
-## Task 6: Networking Devices
-
-In this task, I learned about common devices used in computer networks.
-
-Some important networking devices include:
-
-- Router
-- Switch
-- Hub
-- Firewall
-- Access Point
-
-A router connects different networks and forwards traffic between them. A switch connects devices within a local network and forwards traffic to the appropriate device.
-
-I also understood that firewalls play an important role in controlling network traffic based on security rules.
-
-**Key concepts learned**
-- Routers
-- Switches
-- Hubs
-- Firewalls
-- Access points
-- Network traffic management
-
----
-
-# Section B – Protocols
-
-## Task 7: DNS
-
-DNS stands for Domain Name System.
-
-I learned that DNS converts human-readable domain names into IP addresses.
-
-For example:
+It communicates using broadcast addresses, including the broadcast MAC address:
 
 ```text
-example.com → IP address
+ff:ff:ff:ff:ff:ff
 ```
 
-Instead of remembering numerical IP addresses for every website, users can simply enter domain names.
+After the DHCP process, the device receives important configuration such as:
 
-I also understood that DNS is an important part of Internet communication because it allows systems to locate services using readable domain names.
+* IP address
+* Default gateway
+* DNS server
 
-**Key concepts learned**
-- Domain names
-- IP address resolution
-- DNS servers
-- Name resolution
-- DNS queries
+I also learned how to view network configuration using:
 
----
+```text
+ipconfig /all
+```
 
-## Task 8: DHCP
+on Windows and:
 
-DHCP stands for Dynamic Host Configuration Protocol.
+```text
+ip a
+```
 
-I learned that DHCP automatically provides network configuration information to devices when they connect to a network.
+on Linux.
 
-This can include:
+For renewing the DHCP lease on Windows, the commands covered were:
 
-- IP address
-- Subnet information
-- Default gateway
-- DNS server information
+```text
+ipconfig /release
+ipconfig /renew
+```
 
-Without DHCP, network administrators would have to configure many network settings manually.
+The task also introduced **APIPA**, which can be automatically assigned when a DHCP server is unavailable.
 
-**Key concepts learned**
-- Automatic IP assignment
-- DHCP server
-- Network configuration
-- Default gateway
-- DNS configuration
+**Main takeaway:** DHCP automatically provides the network configuration required for a device to communicate without manually entering every setting.
 
 ---
 
-## Task 9: ICMP
+### **Task 9: Protocols: ICMP**
 
-ICMP stands for Internet Control Message Protocol.
+This task introduced the **Internet Control Message Protocol (ICMP)**, which is mainly used for network diagnostics and error reporting.
 
-I learned that ICMP is mainly used for network diagnostics and communication about network conditions.
+One of the most common tools using ICMP is **ping**. Ping sends an **Echo Request** and waits for an **Echo Reply** to determine whether a host is reachable. It can also measure **Round-Trip Time (RTT)** and packet loss.
 
-A common example is the `ping` command, which uses ICMP to check whether a host is reachable.
+The task also explained **traceroute**. It works by manipulating the **TTL** value of packets. Each router decreases the TTL by one. When the TTL reaches zero, the router drops the packet and sends an **ICMP Time Exceeded (Type 11)** message.
 
-ICMP can therefore be useful when troubleshooting network connectivity.
+This allows each hop along the route to reveal itself. Sometimes traceroute can display `* * *` because routers may not respond or ICMP messages may be blocked.
 
-**Key concepts learned**
-- ICMP
-- Ping
-- Network diagnostics
-- Connectivity testing
-- Error and control messages
+**Main takeaway:** ICMP is useful for diagnosing network connectivity and understanding the path packets take between systems.
 
 ---
 
-## Task 10: HTTP(s)
+### **Task 10: Protocols: HTTP (S)**
 
-This task introduced HTTP and HTTPS.
+This task covered **HTTP (HyperText Transfer Protocol)** and **HTTPS (HyperText Transfer Protocol Secure)**.
 
-HTTP (Hypertext Transfer Protocol) is used for communication between web browsers and web servers.
+HTTP is the protocol used for communication between a web browser and a web server. The browser sends requests and the server responds with resources such as HTML pages, images, and other content.
 
-HTTPS provides an encrypted connection using TLS, which helps protect data exchanged between the client and server.
+**HTTPS** is the secure version of HTTP. It uses **SSL/TLS** to encrypt communication between the client and server. This helps prevent attackers from reading data being transmitted and also provides server authentication.
 
-I understood that HTTPS is important when transmitting sensitive information such as login credentials and personal information.
+I tested both HTTP and HTTPS by visiting `example.com` using separate browser tabs. I also explored the browser's **Developer Tools → Network** section to understand the requests made by the browser.
 
-**Key concepts learned**
-- HTTP
-- HTTPS
-- Web servers
-- Web browsers
-- Encryption
-- TLS
+The task also introduced SSL/TLS certificate information, including the **Certificate Authority (CA)** and **Common Name (CN)** of websites.
+
+**Main takeaway:** HTTP provides normal web communication, while HTTPS adds encryption and authentication to protect the communication.
 
 ---
 
-## Task 11: Other Important Models
+### **Task 11: Protocols: Other Important Models**
 
-This task introduced other important networking models and concepts used to understand communication between systems.
+This task introduced the **OSI model**, which provides a structured way to understand how network communication takes place.
 
-I learned that networking can be divided into layers, with each layer performing a specific role.
-
-The OSI model is one of the important models used to understand network communication. It consists of seven layers:
+The seven OSI layers are:
 
 1. Physical
 2. Data Link
@@ -269,425 +223,424 @@ The OSI model is one of the important models used to understand network communic
 6. Presentation
 7. Application
 
-Understanding these layers helps in troubleshooting network problems and understanding how different protocols work together.
+I also learned how **TCP** and **UDP** operate at the Transport Layer. TCP provides reliable communication using mechanisms such as sequence numbers and error checking, while UDP is simpler and faster but does not provide the same level of reliability.
+
+The task explained how data is encapsulated as it moves through the layers. An HTTP request starts at the Application Layer, then TCP adds transport information, IP adds source and destination addresses, and the Data Link Layer adds MAC information before the data is transmitted as bits.
+
+The questions helped reinforce that TCP adds sequence numbers, IP is responsible for routing between networks, and frames are created at the Data Link Layer.
+
+**Main takeaway:** The OSI model is a useful framework for understanding where different protocols and networking functions operate.
 
 ---
 
-# Section C – Windows
+### **Task 12: Windows: Introduction**
 
-## Task 12: Introduction
+This task introduced the **Windows operating system** and basic system management.
 
-This task introduced me to the Windows operating system from a cybersecurity perspective.
+I learned how Windows organizes information using a hierarchical folder structure. Common locations such as **Desktop, Documents, and Downloads** help users organize their files, while **File Explorer** provides an easy way to navigate through them.
 
-I learned about the Windows environment, its basic components, and how users interact with the operating system.
+The task also covered important system maintenance practices.
 
-Windows is widely used in organizations, making knowledge of Windows administration and security important for cybersecurity professionals.
+**Windows Update** helps:
 
-**Key concepts learned**
-- Windows operating system
-- Desktop environment
-- System components
-- User interaction
-- Basic Windows administration
+* Fix security vulnerabilities
+* Improve performance
+* Resolve bugs and crashes
 
----
+I also learned about installing applications from trusted sources, uninstalling unused applications, and the difference between **Windows Settings** and **Control Panel**.
 
-## Task 13: PowerShell
+**Task Manager** was also introduced as a tool for monitoring the system. It provides information about processes, CPU and memory usage, users, process IDs, and services.
 
-PowerShell is a command-line shell and scripting environment provided by Microsoft.
-
-I learned that PowerShell can be used to perform administrative tasks, manage system resources, inspect information, and automate repetitive operations.
-
-Unlike a traditional graphical interface, PowerShell allows many tasks to be performed directly through commands.
-
-**Key concepts learned**
-- PowerShell
-- Command-line interface
-- System administration
-- Automation
-- PowerShell commands
+**Main takeaway:** Basic Windows administration is important for keeping a system reliable, updated, and secure.
 
 ---
 
-## Task 14: PowerShell vs CMD
+### **Task 13: Windows: PowerShell**
 
-This task helped me understand the difference between PowerShell and the traditional Windows Command Prompt (CMD).
+This task introduced **PowerShell**, a command-line shell, scripting language, and automation framework developed by Microsoft.
 
-CMD is an older command-line environment mainly designed for executing commands and batch scripts.
+PowerShell is built on the **.NET framework** and works with **objects** instead of only plain text. Objects contain properties that describe information and methods that allow actions to be performed.
 
-PowerShell is more advanced and is designed for administration and automation. It works with objects, which makes it more powerful for managing Windows systems.
+I learned that PowerShell was designed by **Jeffrey Snover** to improve Windows administration and automation. PowerShell was initially released for Windows, while **PowerShell Core** was later introduced as a cross-platform and open-source version.
 
-| CMD | PowerShell |
-|---|---|
-| Older command-line environment | Modern command-line and scripting environment |
-| Mainly text-based command output | Object-based pipeline |
-| Batch scripting | Advanced scripting |
-| Basic administration | Advanced administration and automation |
+Important concepts covered included:
 
----
+* Cmdlets
+* Objects
+* Properties
+* Methods
+* Automation
+* Configuration management
+* Cross-platform support
 
-## Task 15: System32
-
-In this task, I learned about the System32 directory in Windows.
-
-System32 contains many important Windows system files, libraries, and executable programs required for the operating system to function properly.
-
-I understood that modifying or deleting important system files without proper knowledge can cause serious problems.
-
-**Key concepts learned**
-- Windows system files
-- System32 directory
-- Executable files
-- System functionality
-- Importance of system directories
+**Main takeaway:** PowerShell provides much more powerful system administration and automation capabilities than a traditional command shell.
 
 ---
 
-## Task 16: User Accounts & UAC
+### **Task 14: Windows: PowerShell vs CMD**
 
-This task focused on Windows user accounts and User Account Control (UAC).
+This task compared **Command Prompt (CMD)** with **PowerShell**.
 
-UAC helps prevent unauthorized changes to the system by asking for permission before certain administrative actions are performed.
+CMD is an older command shell that is mainly useful for basic commands and batch scripts. It works mostly with text-based output and was not designed for advanced remote system administration.
 
-I learned that different users can have different permissions and privileges, and controlling these permissions is an important part of system security.
+PowerShell is a more modern administration environment. It uses **cmdlets**, works with objects, supports complex scripts, and can perform remote administration.
 
-**Key concepts learned**
-- User accounts
-- Administrator accounts
-- User permissions
-- Privileges
-- User Account Control
-- Least privilege
+I also learned that many traditional CMD commands can still be used in PowerShell through **aliases**. The `Get-Alias` command can be used to check these command mappings.
+
+PowerShell can also access Windows components such as the registry, file system, and Windows Management Instrumentation (WMI).
+
+**Main takeaway:** CMD is suitable for simple command-line tasks, while PowerShell is better suited for advanced administration, automation, and scripting.
 
 ---
 
-## Task 17: Security
+### **Task 15: Windows: System32**
 
-This task introduced basic Windows security concepts.
+This task explained the **Windows directory** and the importance of the **System32** folder.
 
-I learned that securing a Windows system involves multiple layers of protection, including proper account management, permissions, updates, authentication, and security controls.
-
-I also understood that security is not dependent on a single feature. Multiple security mechanisms should work together to reduce risks.
-
-**Key concepts learned**
-- System security
-- Authentication
-- Authorization
-- Permissions
-- Security controls
-- Secure configuration
-
----
-
-# Section D – Linux
-
-## Task 18: Introduction
-
-This task introduced me to the Linux operating system.
-
-Linux is widely used in servers, cloud environments, networking systems, and cybersecurity.
-
-I learned the basic Linux environment and the importance of using the command line to interact with the system.
-
-**Key concepts learned**
-- Linux operating system
-- Terminal
-- Command line
-- Linux environment
-- Basic system interaction
-
----
-
-## Task 19: File Systems
-
-This task introduced the Linux file system.
-
-Unlike Windows, Linux uses a directory structure that begins at the root directory:
+The Windows directory is normally located at:
 
 ```text
-/
+C:\Windows
 ```
 
-Some important directories include:
+The system can locate this directory dynamically using the environment variable:
 
-- `/home`
-- `/etc`
-- `/var`
-- `/tmp`
-- `/usr`
-- `/bin`
+```text
+%windir%
+```
 
-I learned that each directory has a specific purpose and that understanding the Linux file system is important for system administration and cybersecurity investigations.
+The Windows directory contains many important subfolders, with **System32** being one of the most critical.
 
-**Key concepts learned**
-- Linux root directory
-- Files and directories
-- File system structure
-- Important Linux directories
-- File management
+System32 contains essential Windows system files, utilities, and executable programs required for the operating system to function properly.
+
+Because these files are important, modifying or deleting files inside System32 can cause serious system problems.
+
+**Main takeaway:** The Windows directory contains core operating system components, and System32 must be handled carefully because it is essential to Windows.
 
 ---
 
-# Section E – Others
+### **Task 16: Windows: User Accounts & UAC**
 
-## Task 20: Cryptography – Part 1
+This task covered **Windows user accounts**, user profiles, groups, and permissions.
 
-This task introduced the fundamentals of cryptography.
+The two main types of Windows accounts are:
 
-Cryptography is the process of protecting information so that unauthorized people cannot understand or modify it.
+* **Administrator** – has permission to make system-wide changes.
+* **Standard User** – has more limited permissions and mainly manages personal files and applications.
 
-I learned about important concepts such as:
+User profiles are stored under:
 
-- Plaintext
-- Ciphertext
-- Encryption
-- Decryption
-- Keys
+```text
+C:\Users\
+```
 
 For example:
 
 ```text
-Plaintext
-   ↓
-Encryption
-   ↓
-Ciphertext
-   ↓
-Decryption
-   ↓
-Plaintext
+C:\Users\Max
 ```
 
-Cryptography is widely used to protect communication, files, passwords, and sensitive information.
-
----
-
-## Task 21: Cryptography – Part 2
-
-This task continued the concepts of cryptography and introduced more details about how cryptographic techniques are used.
-
-I learned that cryptography can involve different types of algorithms and keys.
-
-Two important categories are:
-
-**Symmetric Cryptography**
-The same key is used for encryption and decryption.
+I also learned about **Local Users and Groups Management**, which can be opened using:
 
 ```text
-Same key → Encrypt + Decrypt
+lusrmgr.msc
 ```
 
-**Asymmetric Cryptography**
-Different keys are used:
+Groups can contain multiple users and allow permissions to be managed more efficiently.
 
-- Public Key
-- Private Key
+The task also introduced the importance of controlling administrative privileges. Limiting unnecessary privileges helps reduce the impact of accidental or malicious changes.
 
-The public key can be shared, while the private key must be kept secret.
-
-I understood that cryptography is an important foundation of secure communication.
+**Main takeaway:** User accounts, groups, and permissions are important parts of Windows security because they control what each user can access or modify.
 
 ---
 
-## Task 22: Cipher Breaker Challenge
+### **Task 17: Windows: Security**
 
-This task provided a practical challenge based on cryptography.
+This task introduced the built-in security features available in Windows.
 
-Instead of only learning theoretical concepts, I had to apply what I learned about ciphers and encrypted information.
+Important Windows Security features include:
 
-The challenge helped me understand that weak or simple encryption methods can sometimes be analysed and broken if enough information about the cipher is available.
+* **Virus & threat protection** – detects and protects against malware.
+* **App & browser control** – helps prevent unsafe applications and websites.
+* **Device security** – provides additional protection for the device.
+* **Windows Firewall** – controls network traffic entering and leaving the system.
 
-**What I learned**
-- Identifying encrypted text
-- Understanding basic ciphers
-- Applying cryptography concepts
-- Analysing patterns
-- Solving a practical security challenge
+The Windows Firewall uses different network profiles:
 
-This was one of the more practical parts of the room because it required applying the concepts instead of only reading about them.
+* **Domain**
+* **Private**
+* **Public**
+
+A **Public** network is considered less trusted than a Private network, such as a home network.
+
+The task also reinforced the importance of keeping Windows and applications updated and installing software only from trusted sources.
+
+**Main takeaway:** Windows security depends on several layers of protection working together rather than relying on one security feature.
 
 ---
 
-# Section F – Principles of CyberSecurity
+### **Task 18: Linux: Introduction**
 
-## Task 23: CIA
+This task introduced **Linux** and its importance in modern computing.
 
-This task introduced the CIA Triad, one of the most important concepts in cybersecurity.
+Linux is not one single operating system. It is an open-source platform used as the foundation for many different **distributions**, also called distros.
+
+Some popular distributions include:
+
+* Ubuntu
+* Debian
+
+Linux is widely used in:
+
+* Web servers
+* Automotive systems
+* Retail Point of Sale systems
+* Traffic light systems
+* Industrial sensors
+* Critical infrastructure
+
+One of the main advantages of Linux is that it is lightweight, flexible, and customizable. Ubuntu can be used as both a desktop and server operating system.
+
+**Main takeaway:** Linux is widely used in servers and critical systems, making Linux knowledge very important in cybersecurity.
+
+---
+
+### **Task 19: Linux: File Systems**
+
+This task introduced practical **Linux file and directory management**.
+
+Some important commands covered were:
+
+| Command | Purpose                       |
+| ------- | ----------------------------- |
+| `ls`    | Lists directory contents      |
+| `find`  | Searches for files            |
+| `cd`    | Navigates between directories |
+| `touch` | Creates a file                |
+| `mkdir` | Creates a directory           |
+| `cp`    | Copies files or directories   |
+| `mv`    | Moves or renames files        |
+| `rm`    | Deletes files or directories  |
+| `file`  | Identifies the type of a file |
+
+For example:
+
+```bash
+touch note
+mkdir mydirectory
+cp note note2
+mv note2 note3
+rm note
+```
+
+A directory can be removed recursively using:
+
+```bash
+rm -R mydirectory
+```
+
+The task also explained that Linux does not depend entirely on file extensions to identify a file. The `file` command can be used to determine what type of data a file actually contains.
+
+**Main takeaway:** Knowing basic Linux file commands is essential for working with Linux systems and is especially useful during cybersecurity investigations and practical tasks.
+
+---
+
+### **Task 20: Cryptography - Part 1**
+
+This task introduced the basic concepts of **cryptography** and how it protects information.
+
+Cryptography helps provide **confidentiality, integrity, and authenticity** when information is stored or transmitted.
+
+The basic process is:
+
+```text
+Plaintext + Key → Encryption → Ciphertext
+Ciphertext + Key → Decryption → Plaintext
+```
+
+I learned the following important terms:
+
+* **Plaintext** – original readable information.
+* **Ciphertext** – encrypted and unreadable information.
+* **Cipher** – the algorithm used to transform data.
+* **Key** – a value used by the cipher.
+* **Encryption** – converting plaintext into ciphertext.
+* **Decryption** – converting ciphertext back into plaintext.
+
+The task also introduced classical ciphers such as **Caesar Cipher, Vigenère Cipher, and Substitution Cipher**.
+
+Although these classical ciphers are not suitable for modern secure communication, they are useful for understanding the basic ideas behind encryption and cryptanalysis.
+
+**Main takeaway:** Cryptography protects information by transforming readable data into a form that cannot be understood without the correct process and key.
+
+---
+
+### **Task 21: Cryptography - Part 2**
+
+This task introduced the difference between **symmetric and asymmetric encryption**.
+
+**Symmetric encryption** uses a single shared key for both encryption and decryption. Common algorithms include:
+
+* DES
+* 3DES
+* AES
+
+AES is widely used today with key sizes of 128, 192, and 256 bits. One major challenge with symmetric encryption is securely sharing the secret key.
+
+**Asymmetric encryption** uses two different keys:
+
+* Public key
+* Private key
+
+The public key can be shared openly, while the private key must be kept secret. Asymmetric encryption is useful because a secret key does not have to be shared beforehand.
+
+Common technologies include:
+
+* RSA
+* Diffie-Hellman
+* ECC
+
+I also learned that a **256-bit ECC key** provides security comparable to approximately a **3072-bit RSA key**, while the effective security strength of **3DES** is around **112 bits**.
+
+**Main takeaway:** Symmetric encryption is efficient but has a key-sharing problem, while asymmetric encryption solves key distribution using public and private keys.
+
+---
+
+### **Task 22: Cipher Breaker Challenge**
+
+This task was a practical challenge based on the classical cryptography concepts learned previously.
+
+The challenge involved:
+
+* Caesar Cipher
+* Vigenère Cipher
+* Substitution Cipher
+* Mixed cipher challenges
+
+For the **Caesar Cipher**, I learned that each character is shifted by a fixed value. The basic formula is:
+
+```text
+C = (P + K) mod 26
+```
+
+where `P` represents the plaintext character position and `K` represents the shift.
+
+The **Vigenère Cipher** uses a keyword to apply different shifts to different characters. This makes it more difficult to break using simple brute force compared to Caesar.
+
+The task helped connect the theoretical cryptography concepts with an actual challenge and showed how simple encryption schemes can be analysed and broken.
+
+**Main takeaway:** Cryptography is not only about creating encryption; understanding how weak ciphers can be analysed is also an important cybersecurity skill.
+
+---
+
+### **Task 23: Principles of CyberSecurity: CIA**
+
+This task introduced the **CIA Triad**, which is one of the fundamental concepts of cybersecurity.
 
 CIA stands for:
 
-- **C** – Confidentiality
-- **I** – Integrity
-- **A** – Availability
+* **Confidentiality**
+* **Integrity**
+* **Availability**
 
-**Confidentiality**
-Confidentiality means ensuring that information is accessible only to authorized users.
+**Confidentiality** means that sensitive information should only be accessible to authorized individuals.
 
-Examples include:
-- Password protection
-- Encryption
-- Access control
+**Integrity** means that information should remain accurate and should not be changed without authorization.
 
-**Integrity**
-Integrity means ensuring that information is not modified or corrupted without authorization.
+**Availability** means that systems and information should be accessible to authorized users when required.
 
-Examples include:
-- File hashes
-- Digital signatures
-- Access controls
+The task used simple real-world situations to explain these principles and showed how cybersecurity focuses on protecting all three.
 
-**Availability**
-Availability means ensuring that systems and information are available when authorized users need them.
-
-Examples include:
-- Backups
-- Redundant systems
-- Disaster recovery
-- Protection against denial-of-service attacks
-
-The CIA triad helped me understand the three major goals of information security.
+**Main takeaway:** The CIA Triad provides a basic framework for understanding what cybersecurity is trying to protect.
 
 ---
 
-## Task 24: CIA – Explanation
+### **Task 24: Principles of CyberSecurity: CIA - Explanation**
 
-This task provided a deeper understanding of the CIA triad.
+This task went deeper into the three principles of the **CIA Triad** and showed how they apply to real situations.
 
-I learned that cybersecurity is not only about keeping information secret. A secure system must also ensure that information remains accurate and that services remain available.
+**Confidentiality** protects information from unauthorized access. Encryption and access controls are examples of methods used to maintain confidentiality.
 
-For example:
+**Integrity** protects information from unauthorized modification. For example, if someone changes a bank transaction or alters a record without permission, the integrity of the data has been compromised.
 
-| Principle | Main Goal |
-|---|---|
-| Confidentiality | Prevent unauthorized access |
-| Integrity | Prevent unauthorized modification |
-| Availability | Keep systems and services accessible |
+**Availability** ensures that systems and services remain accessible when users need them. Backup systems, redundancy, and protection against excessive traffic can help maintain availability.
 
-I understood that a security control can sometimes improve one aspect while affecting another, so organizations need to maintain a proper balance between all three principles.
+I also learned how different incidents can affect different CIA principles. Data theft mainly affects confidentiality, unauthorized modification affects integrity, and service outages affect availability.
+
+**Main takeaway:** Identifying which part of the CIA Triad is affected helps understand the type of security problem and the protection required.
 
 ---
 
-# Section G – Red Teaming
+### **Task 25: Principles of CyberSecurity: Red Teaming**
 
-## Task 25: Path 1 – Red Teaming
+This task introduced **Offensive Security** and **Red Teaming**.
 
-This task introduced the concept of Red Teaming.
+Offensive security focuses on actively testing systems by thinking and acting from an attacker's perspective. The purpose is to discover weaknesses before real attackers can exploit them.
 
-A red team performs authorized security testing from an attacker's perspective. The objective is to identify weaknesses in systems, networks, applications, and processes so that they can be fixed.
+Some of the questions an offensive security professional may ask include:
 
-I learned that red teaming is different from simply attacking a system. It is a controlled and authorized security activity carried out within a defined scope.
+* What parts of the system are exposed?
+* What resources can be accessed?
+* What assumptions does the system make about users?
+* What happens when unexpected actions are performed?
 
-**General red team process**
+The task also clarified that hacking in this context means **legal and ethical penetration testing**. Security professionals must have permission before testing a system and must stay within the defined scope.
+
+I also learned that familiarity with the **command-line interface (CLI)** is useful for offensive security activities.
+
+**Main takeaway:** Offensive security helps organizations identify weaknesses proactively by looking at systems from an attacker's point of view.
+
+---
+
+### **Task 26: Red Teaming Continuation**
+
+This task continued the introduction to **Red Teaming** and introduced important terminology used in offensive security.
+
+The main terms covered were:
+
+* **Red Teaming** – an authorized simulation of a real-world attack.
+* **Penetration Testing** – a structured security assessment performed within an approved scope.
+* **Vulnerability** – a weakness in a system or application.
+* **Exploit** – a method used to take advantage of a vulnerability.
+* **Scope** – the defined boundaries of what is allowed to be tested.
+
+A major point I learned was that **permission is essential** in ethical hacking. Security testing must only be performed against systems that have been explicitly authorized for testing.
+
+The practical part involved examining a simulated web application and looking for hidden or unintended pages. Pages could first be tested manually by modifying the URL, for example:
 
 ```text
-Reconnaissance
-      ↓
-Information Gathering
-      ↓
-Identifying Attack Surface
-      ↓
-Security Testing
-      ↓
-Assessment
-      ↓
-Reporting
+http://www.onlineshop.thm/admin
 ```
 
-The goal is to help an organization understand how an attacker could potentially compromise its environment.
+A page that does not exist can return a **404 Error**, while an accessible page may reveal additional content.
 
-**Key concepts learned**
-- Red team
-- Offensive security
-- Attack surface
-- Attack vectors
-- Security assessment
-- Authorized testing
-- Reporting
+The task then introduced **Gobuster**, a tool that can automate web directory enumeration:
 
----
+```bash
+gobuster dir --url http://www.onlineshop.thm/ -w /usr/share/wordlists/dirbuster/directory-list.txt
+```
 
-## Task 26: Red Teaming Continuation
+The important parts of the command are:
 
-The final task continued the introduction to red teaming and helped me understand how offensive security fits into the larger cybersecurity process.
+* `gobuster` – the enumeration tool.
+* `dir` – performs directory enumeration.
+* `--url` – specifies the target website.
+* `-w` – specifies the wordlist used to test possible directories and files.
 
-I learned that identifying a vulnerability is only one part of a security assessment. The findings need to be documented and communicated so that organizations can take corrective action.
+This showed me why automated enumeration is useful when manually checking hundreds or thousands of possible URLs would take too much time.
 
-I also understood the importance of conducting security testing only with proper authorization and within the defined scope.
-
-**Key concepts learned**
-- Red team methodology
-- Attack surface
-- Vulnerability identification
-- Security assessment
-- Risk awareness
-- Responsible security testing
-- Reporting and remediation
+**Main takeaway:** Red Teaming involves understanding the attack surface and identifying weaknesses before real attackers do. Enumeration tools such as Gobuster can help discover exposed content, but they should always be used in an authorized and controlled environment.
 
 ---
 
-## Overall Learning
+### **Overall Conclusion**
 
-After completing all 26 tasks, I gained a strong foundation in several important areas of cybersecurity.
+Completing these 26 TryHackMe tasks gave me a strong foundation in the basic areas of **cybersecurity and networking**.
 
-The main concepts I learned were:
+I started by learning how networks work, including **IP addresses, MAC addresses, ports, packets, frames, DNS, DHCP, and ICMP**. I then moved into Windows and Linux, where I learned basic system administration, file management, user accounts, PowerShell, and built-in security features.
 
-**Networking**
-- IP addresses
-- IPv4 and IPv6
-- Private and public IP addresses
-- Ports
-- Packets and frames
-- Routers and switches
-- DNS
-- DHCP
-- ICMP
-- HTTP and HTTPS
-- Network models
+The cryptography tasks helped me understand **encryption, decryption, symmetric encryption, asymmetric encryption, and classical ciphers**. The Cipher Breaker challenge gave me a practical way to apply those concepts.
 
-**Windows**
-- Windows basics
-- PowerShell
-- CMD
-- System32
-- User accounts
-- UAC
-- Windows security
+The **CIA Triad** helped me understand the main goals of cybersecurity: protecting confidentiality, maintaining data integrity, and ensuring availability. Finally, the Red Teaming tasks introduced the attacker's perspective, ethical hacking, vulnerabilities, exploits, scope, and basic web enumeration.
 
-**Linux**
-- Linux basics
-- Terminal
-- File system
-- Linux directories
-- Basic system interaction
-
-**Cryptography**
-- Encryption
-- Decryption
-- Plaintext and ciphertext
-- Symmetric cryptography
-- Asymmetric cryptography
-- Cipher analysis
-
-**Cybersecurity**
-- CIA Triad
-- Confidentiality
-- Integrity
-- Availability
-- Attack surface
-- Attack vectors
-- Red teaming
-- Security assessment
-
----
-
-## Conclusion
-
-Completing the UVCE MARVEL Level 1 TryHackMe room gave me a practical introduction to cybersecurity and helped me connect theoretical concepts with hands-on learning.
-
-The networking section helped me understand how devices communicate and how protocols such as DNS, DHCP, ICMP and HTTP/HTTPS work. The Windows and Linux sections improved my understanding of operating systems and command-line environments.
-
-The cryptography tasks helped me understand how information can be protected, while the CIA Triad introduced the fundamental security goals of confidentiality, integrity, and availability.
-
-Finally, the red teaming section gave me an introduction to offensive security and showed me how security professionals think from an attacker's perspective while working within an authorized environment.
-
-Overall, this room helped me build a strong foundation in networking, operating systems, cryptography, and cybersecurity principles, and it also gave me more confidence in exploring practical cybersecurity challenges.
+**The main takeaway from the entire set of tasks was that cybersecurity starts with understanding how systems actually work.** Once I understand networks, operating systems, protocols, and applications, it becomes much easier to identify where security weaknesses can exist and how they can be protected.
