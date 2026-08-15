@@ -597,44 +597,24 @@ I also learned that familiarity with the **command-line interface (CLI)** is use
 
 ### **Task 26: Red Teaming Continuation**
 
-This task continued the introduction to **Red Teaming** and introduced important terminology used in offensive security.
+This task continued the introduction to **Red Teaming** and focused on the basic terminology used in offensive security.
 
-The main terms covered were:
+The main concepts I learned were:
 
 * **Red Teaming** – an authorized simulation of a real-world attack.
 * **Penetration Testing** – a structured security assessment performed within an approved scope.
 * **Vulnerability** – a weakness in a system or application.
 * **Exploit** – a method used to take advantage of a vulnerability.
-* **Scope** – the defined boundaries of what is allowed to be tested.
+* **Scope** – the defined boundaries of what can be tested.
 
-A major point I learned was that **permission is essential** in ethical hacking. Security testing must only be performed against systems that have been explicitly authorized for testing.
+I also understood that **permission is essential** in ethical hacking. Security testing should only be performed on systems that have been explicitly authorized for testing.
 
-The practical part involved examining a simulated web application and looking for hidden or unintended pages. Pages could first be tested manually by modifying the URL, for example:
+The task introduced the idea of **web enumeration**, where security professionals look for hidden or unintended resources that may be exposed by a web application. It also introduced **Gobuster** as an example of a tool used to automate this type of enumeration.
 
-```text
-http://www.onlineshop.thm/admin
-```
+The practical exercise helped me understand how attackers think about the **attack surface** and how security testers can identify potentially exposed areas before they are exploited by real attackers.
 
-A page that does not exist can return a **404 Error**, while an accessible page may reveal additional content.
-
-The task then introduced **Gobuster**, a tool that can automate web directory enumeration:
-
-```bash
-gobuster dir --url http://www.onlineshop.thm/ -w /usr/share/wordlists/dirbuster/directory-list.txt
-```
-
-The important parts of the command are:
-
-* `gobuster` – the enumeration tool.
-* `dir` – performs directory enumeration.
-* `--url` – specifies the target website.
-* `-w` – specifies the wordlist used to test possible directories and files.
-
-This showed me why automated enumeration is useful when manually checking hundreds or thousands of possible URLs would take too much time.
-
-**Main takeaway:** Red Teaming involves understanding the attack surface and identifying weaknesses before real attackers do. Enumeration tools such as Gobuster can help discover exposed content, but they should always be used in an authorized and controlled environment.
-
----
+**Main takeaway:** I learned how Red Teaming and penetration testing are used to identify weaknesses from an attacker's perspective, while keeping the testing legal, authorized, and within the defined scope.
+- - - 
 
 ### **Overall Conclusion**
 
