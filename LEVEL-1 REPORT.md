@@ -356,5 +356,5 @@ I successfully completed all **26 tasks**. The TryHackMe exercises helped me con
 
 [View PDF](cy_DNS.pdf)
 
-[click here for detailed report](CY.md)
+[click here](CY.md) for detailed report
 ---
