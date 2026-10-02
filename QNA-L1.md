@@ -1,69 +1,81 @@
-# MARVEL Level-1 Q and A 
+# MARVEL Level-1 Q and A
 
-## 1. PEM File, PPK File and PuTTY
+## 1. PEM File PPK File and PuTTY
 
-PEM stands for Privacy-Enhanced Mail. It is a file format used to store cryptographic information such as private keys, public keys and certificates. In AWS, a PEM file is commonly used as a private key when connecting to an EC2 instance through SSH. It helps verify the identity of the user trying to access the server.
+PEM stands for Privacy Enhanced Mail. It is a file format used to store keys and certificates. In AWS a PEM file is commonly used as a private key to connect to an EC2 instance using SSH. It helps verify the identity of the user who is trying to access the server.
 
-PPK stands for PuTTY Private Key. It is a private-key file format traditionally used by PuTTY for SSH authentication. If we have a PEM file and want to connect to a server using PuTTY, we can convert the PEM file into PPK format using PuTTYgen.
+PPK stands for PuTTY Private Key. It is a file format used by PuTTY for SSH authentication. If we have a PEM file and want to connect to a server using PuTTY we can convert it into a PPK file using PuTTYgen.
 
-PuTTY is a software application used to connect to remote computers and servers over a network. It is commonly used on Windows to connect to Linux servers, including AWS EC2 instances, through SSH. SSH provides an encrypted connection, allowing users to securely access and manage remote servers.
+PuTTY is a software used to connect to remote computers and servers. It is commonly used on Windows to connect to Linux servers such as AWS EC2 instances. It uses SSH to provide a secure connection between the local computer and the remote server.
 
-PuTTYgen is a tool provided with PuTTY that can generate SSH key pairs and convert supported private-key formats. When connecting to an AWS EC2 instance, we can use PuTTYgen to convert the PEM file into a PPK file, configure the server's public IP address in PuTTY, select the PPK file for authentication and establish the SSH connection. The EC2 security group must allow SSH traffic, usually through port 22, from the connecting computer.
+PuTTYgen is a tool that comes with PuTTY. It is used to generate SSH keys and convert key files from one format to another. When connecting to an AWS EC2 instance we can convert the PEM file into a PPK file and use it in PuTTY. We also need the public IP address of the EC2 instance and the correct username. The security group must allow SSH traffic through port 22.
 
-In simple terms, PEM and PPK are private-key file formats, while PuTTY is the application used to connect to a remote server. The private key is used to prove the user's identity and should always be kept secure.
+PEM and PPK are file formats used for private keys while PuTTY is the software used to connect to a remote server. The private key should always be kept safe and should not be shared with others.
 
 ## 2. Types of Amazon S3 Buckets
 
-Amazon S3 stands for Simple Storage Service. It is an object storage service provided by AWS that allows users to store and retrieve data such as images, videos, documents, backups and application files.
+Amazon S3 stands for Simple Storage Service. It is a storage service provided by AWS that is used to store and retrieve files such as images videos documents and backups.
 
-An S3 bucket is a container used to store objects in Amazon S3. Each object contains data and is identified by a unique key within the bucket. Buckets help organize and manage stored data and control access to it.
+An S3 bucket is a container where we store data in Amazon S3. The files stored inside a bucket are called objects. Each object has a unique key that helps identify it within the bucket.
 
-Amazon S3 provides different bucket types for different requirements. General purpose buckets are the standard bucket type and are used for common storage needs such as backups, application files, static websites and data lakes. Directory buckets are designed for workloads that require very low latency and high request rates. They are associated with the S3 Express One Zone storage class and use a hierarchical directory structure. Table buckets are designed to store tabular data using Apache Iceberg-compatible tables and are useful for analytics workloads.
+Amazon S3 provides different types of buckets based on their usage. General purpose buckets are used for common storage needs such as application files backups static websites and data lakes.
 
-S3 also provides different storage classes based on how frequently data is accessed and how it needs to be stored. S3 Standard is used for frequently accessed data. S3 Intelligent-Tiering is useful when access patterns change or are difficult to predict. S3 Standard-IA is intended for data that is accessed less frequently but still requires quick access. S3 One Zone-IA stores infrequently accessed data in a single Availability Zone, while S3 Glacier storage classes are used for archival data.
+Directory buckets are designed for applications that need very fast data access and high request rates. They are associated with the S3 Express One Zone storage class and use a hierarchical directory structure.
 
-A bucket type defines the structure and capabilities of the bucket, whereas a storage class defines how individual objects are stored. S3 is commonly used for application storage, backups, archives, static website content and sharing data between AWS services. Buckets are private by default in common configurations, and access can be managed using IAM policies, bucket policies and other access-control settings.
+Table buckets are used to store tabular data and are designed for analytics workloads. They support Apache Iceberg compatible tables.
+
+Amazon S3 also provides different storage classes depending on how frequently the data is accessed. S3 Standard is used for frequently accessed data. S3 Intelligent Tiering is useful when the access pattern is not predictable. S3 Standard IA is used for data that is accessed less frequently but still needs quick access. S3 One Zone IA stores data in a single Availability Zone. S3 Glacier storage classes are mainly used for long term data storage and archiving.
+
+A bucket type defines the features and structure of the bucket while a storage class defines how the data is stored. S3 is commonly used for storing application data backups and files. Access to buckets and objects can be managed using IAM policies and bucket policies.
 
 ## 3. DHCP
 
-DHCP stands for Dynamic Host Configuration Protocol. It is a network protocol that automatically assigns IP addresses and other network configuration details to devices connected to a network.
+DHCP stands for Dynamic Host Configuration Protocol. It is a network protocol that automatically assigns IP addresses and other network settings to devices connected to a network.
 
-Whenever a device connects to a network, it needs an IP address to communicate with other devices. Instead of configuring an IP address manually on every device, DHCP allows a DHCP server, often running on a router, to assign the required settings automatically. These settings may include the IP address, subnet mask, default gateway, DNS server address and lease duration.
+When a device connects to a network it needs an IP address to communicate with other devices. Instead of assigning an IP address manually DHCP provides one automatically through a DHCP server. This server is often available on a router.
 
-DHCP commonly follows a four-step process known as DORA: Discover, Offer, Request and Acknowledge.
+DHCP can provide an IP address subnet mask default gateway DNS server address and lease duration to a device.
 
-During the Discover step, a device sends a DHCP Discover message to find available DHCP servers. In the Offer step, a DHCP server responds with an available IP address and other network settings. During the Request step, the device requests to use the offered IP address. Finally, in the Acknowledge step, the DHCP server confirms the assignment, and the device can start using the IP address.
+DHCP works through a process called DORA. It has four steps which are Discover Offer Request and Acknowledge.
 
-The IP address is generally assigned for a specific period called a DHCP lease. Before the lease expires, the device can request to renew it. This allows IP addresses to be reused when devices disconnect or no longer need them.
+In the Discover step the device sends a message to find a DHCP server. In the Offer step the server offers an available IP address. In the Request step the device requests to use that IP address. Finally in the Acknowledge step the server confirms the assignment and the device can start using the address.
 
-DHCP reduces manual configuration, makes network management easier and helps prevent common configuration mistakes and IP address conflicts. For example, when a phone connects to Wi-Fi, the router's DHCP server can automatically assign it an IP address and the other settings required to communicate over the network.
+The IP address assigned by DHCP is usually given for a limited period called a lease. Before the lease expires the device can request to renew it.
+
+DHCP makes network management easier because we do not have to manually configure every device. It also helps reduce IP address conflicts and configuration errors.
+
+For example when we connect our phone to WiFi the router can automatically assign an IP address using DHCP. This allows the phone to communicate with other devices and access the internet.
 
 ## 4. ICMP
 
-ICMP stands for Internet Control Message Protocol. It is a network protocol used by network devices to send error reports and operational information related to IP communication. It helps identify certain network problems and is commonly used for troubleshooting.
+ICMP stands for Internet Control Message Protocol. It is a network protocol used to send error messages and information related to IP communication. It is mainly used for network troubleshooting and diagnostics.
 
-One of the most familiar tools that uses ICMP is ping. The ping command sends ICMP Echo Request messages to a destination and waits for ICMP Echo Reply messages. If replies are received, ping displays information such as the response time and packet loss.
+One common tool that uses ICMP is ping. The ping command checks whether a destination responds over a network. It sends an ICMP Echo Request message and waits for an ICMP Echo Reply.
 
-For example, the command `ping 8.8.8.8` sends Echo Request messages to the specified IP address. If the destination is configured to respond and the messages are allowed through the network, it sends Echo Reply messages back.
+For example we can use the command `ping 8.8.8.8` to check whether that IP address responds. If replies are received ping displays information such as response time and packet loss.
 
-ICMP also includes messages such as Destination Unreachable, which indicates that a destination or network cannot be reached in a particular way, and Time Exceeded, which indicates that a packet's TTL has expired or that a fragment reassembly timer has expired.
+ICMP has different types of messages. Destination Unreachable is used when a destination or network cannot be reached in a particular way. Time Exceeded is sent when a packet's TTL expires or when a fragment reassembly timer expires. Echo Request and Echo Reply are used by ping to check connectivity.
 
-ICMP is different from TCP and UDP. TCP and UDP are transport-layer protocols used to carry application data, while ICMP is used for network control, error reporting and diagnostics. ICMP does not use TCP or UDP port numbers.
+ICMP is different from TCP and UDP. TCP and UDP are used to transfer application data while ICMP is mainly used for error reporting and network diagnostics. ICMP does not use TCP or UDP port numbers.
 
-ICMP is useful for diagnosing connectivity issues and understanding certain network delivery problems. However, a failed ping does not always mean that a server is down. A firewall or network configuration may block ICMP traffic even when the server and its applications are running.
+ICMP helps us find network connectivity problems. However if ping does not receive a reply it does not always mean that the server is down. Sometimes a firewall or network setting may block ICMP traffic even when the server is working properly.
 
 ## 5. Public Key and Private Key
 
-Public-key cryptography uses a pair of mathematically related keys called a public key and a private key. These keys are used for tasks such as encryption, authentication and digital signatures.
+Public key and private key are two parts of a cryptographic key pair. They are used to secure communication and verify identity.
 
-A public key can be shared with other people or systems. Depending on the cryptographic method, it can be used to encrypt information or verify a digital signature. A private key must be kept secret by its owner. It can be used to decrypt information encrypted for the corresponding public key or to create digital signatures.
+A public key can be shared with other people or systems. It can be used to encrypt information or verify a digital signature depending on the cryptographic method.
 
-For example, if someone wants to send encrypted information to a recipient, they can use the recipient's public key to encrypt it. The recipient can then use the corresponding private key to decrypt it. For digital signatures, the sender uses their private key to sign information, and others can use the corresponding public key to verify the signature.
+A private key must be kept secret by its owner. It can be used to decrypt information or create digital signatures. The public and private keys are mathematically related but the private key cannot practically be calculated from the public key when secure algorithms are used.
 
-Public and private keys are also used in SSH authentication. When connecting to a server using SSH key-based authentication, the server stores the user's public key. The SSH client proves that the user has access to the matching private key through a cryptographic authentication process. If authentication succeeds and the user is authorized, the connection is allowed. The private key remains with the user and should not be shared.
+For example if someone wants to send an encrypted message to another person they can use the receiver's public key to encrypt it. The receiver can then use their private key to decrypt the message.
 
-WhatsApp uses end-to-end encryption to protect personal messages and calls. Its encryption system uses public-key and private-key cryptography together with symmetric encryption. Cryptographic keys on users' devices help establish secure communication. Message content is encrypted on the sender's device and decrypted on the recipient's device. WhatsApp's end-to-end encryption is based on the Signal Protocol.
+These keys are also used in SSH. When a user connects to a server using SSH key authentication the server has the user's public key. The user proves that they have the matching private key. If the authentication is successful and the user is allowed to access the server the connection is established.
 
-End-to-end encryption is designed so that message content can be read only by the communicating devices, rather than by the service relaying the messages. Some account information and metadata may be handled separately from the encrypted message content.
+WhatsApp also uses public key and private key cryptography as part of its end to end encryption system. It uses these keys along with symmetric encryption to protect messages and calls.
 
-Public and private keys are important because they support secure communication, authentication, encryption and digital signatures. The public key can be shared, but the private key must remain secret to prevent unauthorized access or impersonation.
+When a message is sent it is encrypted on the sender's device and decrypted on the receiver's device. WhatsApp uses the Signal Protocol for end to end encryption. The purpose of this system is to protect message content so that only the communicating devices can read it.
+
+Some account information and metadata may be handled separately from the encrypted message content.
+
+Public and private keys are important for secure communication authentication encryption and digital signatures. The public key can be shared but the private key must always remain secret.
